@@ -8,129 +8,24 @@ go-to: sandbox_menu
 
 @sandbox_menu
 
-- @disable_end: Disable End In 1934
-- @enable_end: Enable End In 1934
 - @clear_hand: Clear Cards
 - @make_adv_available: Make Advisors Available
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
 - @editeconomy: Edit Economy
 - @editrelations: Edit Party Relations & Coalition Dissent
-- @editpartysupport: Edit Party Support
-- @editelectoral: Edit Electoral Threshold
-- @editfactions: Edit SPD Factions
-- @miscparty: Miscellaneous Party Options
-- @editironfront: Edit Iron Front
+- @editfactions: Edit CHP Factions
 - @editparamilitary: Edit Paramilitary Groups
-- @editreichswehr: Edit Reichswehr and Police
+- @editarmy: Edit Army and Police
 - @backSpecialScene: Exit Sandbox Menu
-
-@disable_end
-view-if: end_disabled != 1
-on-arrival: end_disabled = 1
-go-to: sandbox_menu
-
-The end date has been disabled.
-
-@enable_end
-view-if: end_disabled = 1
-on-arrival: end_disabled = 0
-go-to: sandbox_menu
-
-The end date has been enabled.
-
-@clear_hand
-go-to: sandbox_menu
-on-arrival: {!
-Q.advisor_action_timer = 6;
-if (Q.difficulty >= 0) {
-    window.dendryUI.dendryEngine.state.currentHands['main'] = [];
-} else {
-    window.dendryUI.dendryEngine.state.currentHands['main.main_easy'] = [];
-}
-!}
-
-Cleared all cards.
-
-@make_adv_available
-go-to: sandbox_menu
-on-arrival: {!
-Q.advisor_action_timer = 0;
-!}
-
-Made advisor actions available.
-
-@editelectoral
-
-- @electoral0: Set Electoral Threshold to 0% (Default)
-- @electoral5: Set Electoral Threshold to 5%
-- @electoral10: Set Electoral Threshold to 10%
-- @electoral20: Set Electoral Threshold to 20%
-- @electoral40: Set Electoral Threshold to 40%
-- @returnsandbox: Return To Sandbox
-
-@electoral0
-go-to: sandbox_menu
-on-arrival: {!
-Q.electoral_threshold = 0;
-if (Q.constitutional_reform < 1) {
-    Q.constitutional_reform = 1;
-};
-!}
-
-Set electoral threshold to 0%.
-
-@electoral5
-go-to: sandbox_menu
-on-arrival: {!
-Q.electoral_threshold = 5;
-if (Q.constitutional_reform < 1) {
-    Q.constitutional_reform = 1;
-};
-!}
-
-Set electoral threshold to 5%.
-
-@electoral10
-go-to: sandbox_menu
-on-arrival: {!
-Q.electoral_threshold = 10;
-if (Q.constitutional_reform < 1) {
-    Q.constitutional_reform = 1;
-};
-!}
-
-Set electoral threshold to 10%.
-
-@electoral20
-go-to: sandbox_menu
-on-arrival: {!
-Q.electoral_threshold = 20;
-if (Q.constitutional_reform < 1) {
-    Q.constitutional_reform = 1;
-};
-!}
-
-Set electoral threshold to 20%.
-
-@electoral40
-go-to: sandbox_menu
-on-arrival: {!
-Q.electoral_threshold = 40;
-if (Q.constitutional_reform < 1) {
-    Q.constitutional_reform = 1;
-};
-!}
-
-Set electoral threshold to 40%.
 
 @editfactions
 
-- @editleft: Edit Left Faction Of SPD
-- @editcenter: Edit Center Faction of SPD
-- @editlabor: Edit Labor Faction of SPD
-- @editreformist: Edit Reformist Faction of SPD
-- @editneorevisionist: Edit Neorevisionist Faction of SPD
+- @editleft: Edit Left Faction Of CHP
+- @editorthodox: Edit Orthodox Faction of CHP
+- @editmarxist: Edit Marxist Faction of CHP
+- @editright: Edit Right Faction of CHP
+- @editthirdworldist: Edit Third Worldist Faction of CHP
 - @returnsandbox: Return To Sandbox
 
 @editresources
@@ -257,8 +152,6 @@ Removed 100 budget from the country's stockpile. This doesn't go to the homeless
 - @decreaseinflation: Decrease Inflation by 5%
 - @increaseunemployment: Increase Unemployment by 5%
 - @decreaseunemployment: Decrease Unemployment by 5%
-- @increasescience: Increase Science by 1
-- @decreasescience: Decrease Science by 1
 - @returnsandbox: Return To Sandbox Menu
 
 @increasegrowth
