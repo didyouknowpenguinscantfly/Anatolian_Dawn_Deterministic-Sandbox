@@ -12,9 +12,8 @@ go-to: sandbox_menu
 - @make_adv_available: Make Advisors Available
 - @editresources: Edit Resources
 - @editbudget: Edit Budget
-- @editeconomy: Edit Economy
 - @editrelations: Edit Party Relations & Coalition Dissent
-- @editfactions: Edit CHP Factions
+- @editfactions_dissent: Edit CHP Factions' Dissent
 - @editparamilitary: Edit Paramilitary Groups
 - @editarmy: Edit Army
 - @backSpecialScene: Exit Sandbox Menu
@@ -42,11 +41,11 @@ Made advisor actions available.
 
 @editfactions
 
-- @editleft: Edit Left Faction Of CHP
-- @editorthodox: Edit Orthodox Faction of CHP
-- @editmarxist: Edit Marxist Faction of CHP
-- @editright: Edit Right Faction of CHP
-- @editthirdworldist: Edit Third Worldist Faction of CHP
+- @editleft: Edit Leftist Kemalists' dissent
+- @editorthodox: Edit Reformist Kemalists' dissent
+- @editmarxist: Edit Kemalist Marxists' dissent
+- @editright: Edit Right Kemalists' dissent
+- @editthirdworldist: Edit Third Worldists' dissent
 - @returnsandbox: Return To Sandbox
 
 @editresources
@@ -164,64 +163,6 @@ Q.budget -= 100;
 !}
 
 Removed 100 budget from the country's stockpile. This doesn't go to the homeless or anything, why would you do this?
-
-@editeconomy
-
-- @increasegrowth: Increase Economic Growth by 5%
-- @decreasegrowth: Decrease Economic Growth by 5%
-- @increaseinflation: Increase Inflation by 5%
-- @decreaseinflation: Decrease Inflation by 5%
-- @increaseunemployment: Increase Unemployment by 5%
-- @decreaseunemployment: Decrease Unemployment by 5%
-- @returnsandbox: Return To Sandbox Menu
-
-@increasegrowth
-go-to: editeconomy
-on-arrival: {!
-Q.economic_growth += 5;
-!}
-
-Increased economic growth by 5%.
-
-@decreasegrowth
-go-to: editeconomy
-on-arrival: {!
-Q.economic_growth -= 5;
-!}
-
-Decreased economic growth by 5%.
-
-@increaseinflation
-go-to: editeconomy
-on-arrival: {!
-Q.inflation += 5;
-!}
-
-Increased inflation by 5%.
-
-@decreaseinflation
-go-to: editeconomy
-on-arrival: {!
-Q.inflation -= 5;
-!}
-
-Decreased inflation by 5%.
-
-@increaseunemployment
-go-to: editeconomy
-on-arrival: {!
-Q.unemployed += 5;
-!}
-
-Increased unemployment by 5%.
-
-@decreaseunemployment
-go-to: editeconomy
-on-arrival: {!
-Q.unemployed -= 5;
-!}
-
-Decreased unemployment by 5%.
 
 @editrelations
 
@@ -355,10 +296,6 @@ Decreased relations with the MHP.
 - @100leftdissent: Maximum Left Dissent
 - @subtract5leftdissent: Remove 5 Left Dissent
 - @removeleftdissent: Remove All Left Dissent
-- @add5leftstrength: Add 5 Left Strength
-- @100leftstrength: Maximum Left Strength
-- @subtract5leftstrength: Remove 5 Left Strength
-- @removeleftstrength: Remove Left Strength
 - @returnsandbox: Return To Sandbox Menu
 
 @add5leftdissent
@@ -393,48 +330,12 @@ Q.left_kemalists_dissent = 0;
 
 Removed all left dissent.
 
-@add5leftstrength
-go-to: editleft
-on-arrival: {!
-Q.left_kemalists_strength += 5;
-!}
-
-Added 5 left strength.
-
-@100leftstrength
-go-to: editleft
-on-arrival: {!
-Q.left_kemalists_strength = 100;
-!}
-
-Maximised left strength.
-
-@subtract5leftstrength
-go-to: editleft
-on-arrival: {!
-Q.left_kemalists_strength -= 5;
-!}
-
-Reduced left strength by 5.
-
-@removeleftstrength
-go-to: editleft
-on-arrival: {!
-Q.left_kemalists_strength = 0;
-!}
-
-Removed all left strength.
-
 @editorthodox
 
-- @add5orthodoxdissent: Add 5 Orthodox Dissent
-- @100orthodoxdissent: Maximum Orthodox Dissent
-- @subtract5orthodoxdissent: Remove 5 Orthodox Dissent
-- @removeorthodoxdissent: Remove All Orthodox Dissent
-- @add5orthodoxstrength: Add 5 Orthodox Strength
-- @100orthodoxstrength: Maximum Orthodox Strength
-- @subtract5orthodoxstrength: Remove 5 orthodox Strength
-- @removeorthodoxstrength: Remove Orthodox Strength
+- @add5orthodoxdissent: Add 5 Reformist Dissent
+- @100orthodoxdissent: Maximum Reformist Dissent
+- @subtract5orthodoxdissent: Remove 5 Reformist Dissent
+- @removeorthodoxdissent: Remove All Reformist Dissent
 - @returnsandbox: Return To Sandbox Menu
 
 @add5orthodoxdissent
@@ -443,7 +344,7 @@ on-arrival: {!
 Q.orthodox_kemalists_dissent += 5;
 !}
 
-Added 5 orthodox dissent.
+Added 5 reformist dissent.
 
 @100orthodoxdissent
 go-to: editorthodox
@@ -451,7 +352,7 @@ on-arrival: {!
 Q.orthodox_kemalists_dissent = 100;
 !}
 
-Maximised orthodox dissent.
+Maximised reformist dissent.
 
 @subtract5orthodoxdissent
 go-to: editorthodox
@@ -459,7 +360,7 @@ on-arrival: {!
 Q.orthodox_kemalists_dissent -= 5;
 !}
 
-Reduced orthodox dissent by 5.
+Reduced reformist dissent by 5.
 
 @removeorthodoxdissent
 go-to: editorthodox
@@ -467,39 +368,7 @@ on-arrival: {!
 Q.orthodox_kemalists_dissent = 0;
 !}
 
-Removed all orthodox dissent.
-
-@add5orthodoxstrength
-go-to: editorthodox
-on-arrival: {!
-Q.orthodox_kemalists_strength += 5;
-!}
-
-Added 5 orthodox strength.
-
-@100orthodoxstrength
-go-to: editorthodox
-on-arrival: {!
-Q.orthodox_kemalists_strength = 100;
-!}
-
-Maximised orthodox strength.
-
-@subtract5orthodoxstrength
-go-to: editorthodox
-on-arrival: {!
-Q.orthodox_kemalists_strength -= 5;
-!}
-
-Reduced orthodox strength by 5.
-
-@removeorthodoxstrength
-go-to: editorthodox
-on-arrival: {!
-Q.orthodox_kemalists_strength = 0;
-!}
-
-Removed all orthodox strength.
+Removed all reformist dissent.
 
 @editmarxist
 
@@ -507,10 +376,6 @@ Removed all orthodox strength.
 - @100marxistdissent: Maximum Marxist Dissent
 - @subtract5marxistdissent: Remove 5 Marxist Dissent
 - @removemarxistdissent: Remove All Marxist Dissent
-- @add5marxiststrength: Add 5 Marxist Strength
-- @100marxiststrength: Maximum Marxist Strength
-- @subtract5marxiststrength: Remove 5 Marxist Strength
-- @removemarxiststrength: Remove Marxist Strength
 - @returnsandbox: Return To Sandbox Menu
 
 @add5marxistdissent
@@ -545,48 +410,12 @@ Q.kemalist_marxists_dissent = 0;
 
 Removed all marxist dissent.
 
-@add5marxiststrength
-go-to: editmarxist
-on-arrival: {!
-Q.kemalist_marxists_strength += 5;
-!}
-
-Added 5 marxist strength.
-
-@100marxiststrength
-go-to: editmarxist
-on-arrival: {!
-Q.kemalist_marxists_strength = 100;
-!}
-
-Maximised marxist strength.
-
-@subtract5marxiststrength
-go-to: editmarxist
-on-arrival: {!
-Q.kemalist_marxists_strength -= 5;
-!}
-
-Reduced marxist strength by 5.
-
-@removemarxiststrength
-go-to: editmarxist
-on-arrival: {!
-Q.kemalist_marxists_strength = 0;
-!}
-
-Removed all marxist strength.
-
 @editright
 
 - @add5rightdissent: Add 5 Right Dissent
 - @100rightdissent: Maximum Right Dissent
 - @subtract5rightdissent: Remove 5 Right Dissent
 - @removerightdissent: Remove All Right Dissent
-- @add5rightstrength: Add 5 Right Strength
-- @100rightstrength: Maximum Right Strength
-- @subtract5rightstrength: Remove 5 Right Strength
-- @removerightstrength: Remove Right Strength
 - @returnsandbox: Return To Sandbox Menu
 
 @add5rightdissent
@@ -621,48 +450,12 @@ Q.right_kemalists_dissent = 0;
 
 Removed all right dissent.
 
-@add5rightstrength
-go-to: editright
-on-arrival: {!
-Q.right_kemalists_strength += 5;
-!}
-
-Added 5 right strength.
-
-@100rightstrength
-go-to: editright
-on-arrival: {!
-Q.right_kemalists_strength = 100;
-!}
-
-Maximised right strength.
-
-@subtract5rightstrength
-go-to: editright
-on-arrival: {!
-Q.right_kemalists_strength -= 5;
-!}
-
-Reduced right strength by 5.
-
-@removerightstrength
-go-to: editright
-on-arrival: {!
-Q.right_kemalists_strength = 0;
-!}
-
-Removed all right strength.
-
 @editthirdworldist
 
 - @add5thirdworldistdissent: Add 5 Third Worldist Dissent
 - @100thirdworldistdissent: Maximum Third Worldist Dissent
 - @subtract5thirdworldistdissent: Remove 5 Third Worldist Dissent
 - @removethirdworldistdissent: Remove All Third Worldist Dissent
-- @add5thirdworldiststrength: Add 5 Third Worldist Strength
-- @100thirdworldiststrength: Maximum Third Worldist Strength
-- @subtract5thirdworldiststrength: Remove 5 Third Worldist Strength
-- @removethirdworldiststrength: Remove Third Worldist Strength
 - @returnsandbox: Return To Sandbox Menu
 
 @add5thirdworldistdissent
@@ -696,38 +489,6 @@ Q.third_worldists_dissent = 0;
 !}
 
 Removed all third worldist dissent.
-
-@add5thirdworldiststrength
-go-to: editthirdworldist
-on-arrival: {!
-Q.third_worldists_strength += 5;
-!}
-
-Added 5 third worldist strength.
-
-@100thirdworldiststrength
-go-to: editthirdworldist
-on-arrival: {!
-Q.third_worldists_strength = 100;
-!}
-
-Maximised third worldist strength.
-
-@subtract5thirdworldiststrength
-go-to: editthirdworldist
-on-arrival: {!
-Q.third_worldists_strength -= 5;
-!}
-
-Reduced third worldist strength by 5.
-
-@removethirdworldiststrength
-go-to: editthirdworldist
-on-arrival: {!
-Q.third_worldists_strength = 0;
-!}
-
-Removed all third worldist strength.
 
 @returnsandbox
 go-to: sandbox_menu
