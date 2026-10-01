@@ -202,32 +202,16 @@ Q.unemployed -= 5;
 
 Decreased unemployment by 5%.
 
-@increasescience
-go-to: editeconomy
-on-arrival: {!
-Q.science += 1;
-!}
-
-Increased science by 1.
-
-@decreasescience
-go-to: editeconomy
-on-arrival: {!
-Q.science -= 1;
-!}
-
-Decreased science by 1.
-
 @editrelations
 
-- @increasecenterrel: Increase Relations With The Center Party
-- @decreasecenterrel: Decrease Relations With The Center Party
-- @increasekpdrel: Increase Relations With The KPD
-- @decreasekpdrel: Decrease Relations With The KPD
-- @increaseddprel: Increase Relations With The DDP/DStP
-- @decreaseddprel: Decrease Relations With The DDP/DStP
-- @increasedvprel: Increase Relations With The DVP
-- @decreasedvprel: Decrease Relations With The DVP
+- @increaseaprel: Increase Relations With AP
+- @decreaseaprel: Decrease Relations With AP
+- @increasecgprel: Increase Relations With CGP
+- @decreasecgprel: Decrease Relations With CGP
+- @increasetiprel: Increase Relations With TIP
+- @decreasetiprel: Decrease Relations With TIP
+- @increasedprel: Increase Relations With DP
+- @decreasedprel: Decrease Relations With DP
 - @removedissent: Remove Coalition Dissent
 - @maxdissent: Maximise Coalition Dissent
 - @returnsandbox: Return To Sandbox Menu
@@ -248,85 +232,85 @@ Q.coalition_dissent = 5;
 
 Removed coalition dissent.
 
-@increasecenterrel
+@increaseaprel
 go-to: editrelations
 on-arrival: {!
 Q.z_relation += 15;
 !}
 
-Increased relations with the Center Party.
+Increased relations with AP.
 
-@decreasecenterrel
+@decreaseaprel
 go-to: editrelations
 on-arrival: {!
 Q.z_relation -= 15;
 !}
 
-Decreased relations with the Center Party.
+Decreased relations with AP.
 
-@increasekpdrel
+@increasecgprel
 go-to: editrelations
 on-arrival: {!
-Q.kpd_relation += 15;
+Q.CGP_relation += 15;
 !}
 
-Increased relations with the KPD.
+Increased relations with CGP.
 
-@decreasekpdrel
+@decreasecgprel
 go-to: editrelations
 on-arrival: {!
-Q.kpd_relation -= 15;
+Q.CGP_relation -= 15;
 !}
 
-Decreased relations with the KPD.
+Decreased relations with CGP.
 
-@increaseddprel
+@increasetiprel
 go-to: editrelations
 on-arrival: {!
-Q.ddp_relation += 15;
+Q.TIP_relation += 15;
 !}
 
-Increased relations with the DDP.
+Increased relations with TIP.
 
-@decreaseddprel
+@decreasetiprel
 go-to: editrelations
 on-arrival: {!
-Q.ddp_relation -= 15;
+Q.TIP_relation -= 15;
 !}
 
-Decreased relations with the DDP.
+Decreased relations with TIP.
 
-@increasedvprel
+@increasedprel
 go-to: editrelations
 on-arrival: {!
-Q.dvp_relation += 15;
+Q.DP_relation += 15;
 !}
 
-Increased relations with the DVP.
+Increased relations with the DP.
 
-@decreasedvprel
+@decreasedprel
 go-to: editrelations
 on-arrival: {!
-Q.dvp_relation -= 15;
+Q.DP_relation -= 15;
 !}
 
-Decreased relations with the DVP.
+Decreased relations with the DP.
 
-@increasednvprel
+@increasemsprel
 go-to: editrelations
 on-arrival: {!
-Q.dnvp_relation += 15;
+Q.MSP_relation += 15;
 !}
 
-Increased relations with the DNVP.
+Increased relations with the MSP.
 
-@decreasednvprel
+@decreasemsprel
 go-to: editrelations
 on-arrival: {!
-Q.dnvp_relation -= 15;
+Q.msp_relation -= 15;
 !}
 
-Decreased relations with the DNVP.
+Decreased relations with the MSP.
 
 @increasensdaprel
 go-to: editrelations
