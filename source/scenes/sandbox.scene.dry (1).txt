@@ -1,0 +1,1131 @@
+title: sandbox
+new-page: true
+is-special: true
+is-hand: true
+go-to: sandbox_menu
+
+= Sandbox Menu
+
+@sandbox_menu
+
+- @clear_hand: Clear Cards
+- @make_adv_available: Make Advisors Available
+- @editresources: Edit Resources
+- @editbudget: Edit Budget
+- @editeconomy: Edit Economy
+- @editrelations: Edit Party Relations & Coalition Dissent
+- @editfactions: Edit CHP Factions
+- @editparamilitary: Edit Paramilitary Groups
+- @editarmy: Edit Army
+- @backSpecialScene: Exit Sandbox Menu
+
+@clear_hand
+go-to: sandbox_menu
+on-arrival: {!
+Q.advisor_action_timer = 6;
+if (Q.difficulty >= 0) {
+    window.dendryUI.dendryEngine.state.currentHands['main'] = [];
+} else {
+    window.dendryUI.dendryEngine.state.currentHands['main.main_easy'] = [];
+}
+!}
+
+Cleared all cards.
+
+@make_adv_available
+go-to: sandbox_menu
+on-arrival: {!
+Q.advisor_action_timer = 0;
+!}
+
+Made advisor actions available.
+
+@editfactions
+
+- @editleft: Edit Left Faction Of CHP
+- @editorthodox: Edit Orthodox Faction of CHP
+- @editmarxist: Edit Marxist Faction of CHP
+- @editright: Edit Right Faction of CHP
+- @editthirdworldist: Edit Third Worldist Faction of CHP
+- @returnsandbox: Return To Sandbox
+
+@editresources
+
+- @add10resources: Add 10 Resources
+- @add20resources: Add 20 Resources
+- @add100resources: Add 100 Resources
+- @subtract10resources: Subtract 10 Resources
+- @subtract20resources: Subtract 20 Resources
+- @subtract100resources: Subtract 100 Resources
+- @returnsandbox: Return To Sandbox
+
+@add10resources
+go-to: sandbox_menu
+on-arrival: {!
+Q.resources += 10;
+!}
+
+Added 10 resources to the party's stockpile.
+
+@add20resources
+go-to: sandbox_menu
+on-arrival: {!
+Q.resources += 20;
+!}
+
+Added 20 resources to the party's stockpile.
+
+@add100resources
+go-to: sandbox_menu
+on-arrival: {!
+Q.resources += 100;
+!}
+
+Added 100 resources to the party's stockpile, stop being greedy.
+
+@subtract10resources
+go-to: sandbox_menu
+on-arrival: {!
+Q.resources -= 10;
+!}
+
+Removed 10 resources from the party's stockpile.
+
+@subtract20resources
+go-to: sandbox_menu
+on-arrival: {!
+Q.resources -= 20;
+!}
+
+Removed 20 resources from the party's stockpile.
+
+@subtract100resources
+go-to: sandbox_menu
+on-arrival: {!
+Q.resources -= 100;
+!}
+
+Removed 100 resources from the party's stockpile. This doesn't go to the homeless or anything, why would you do this?
+
+@editbudget
+
+- @add10budget: Add 10 Budget
+- @add20budget: Add 20 Budget
+- @add100budget: Add 100 Budget
+- @subtract10budget: Subtract 10 Budget
+- @subtract20budget: Subtract 20 Budget
+- @subtract100budget: Subtract 100 Budget
+- @returnsandbox: Return To Sandbox
+
+@add10budget
+go-to: sandbox_menu
+on-arrival: {!
+Q.budget += 10;
+!}
+
+Added 10 budget to the country's stockpile.
+
+@add20budget
+go-to: sandbox_menu
+on-arrival: {!
+Q.budget += 20;
+!}
+
+Added 20 budget to the country's stockpile.
+
+@add100budget
+go-to: sandbox_menu
+on-arrival: {!
+Q.budget += 100;
+!}
+
+Added 100 budget to the country's stockpile, stop being greedy.
+
+@subtract10budget
+go-to: sandbox_menu
+on-arrival: {!
+Q.budget -= 10;
+!}
+
+Removed 10 budget from the country's stockpile.
+
+@subtract20budget
+go-to: sandbox_menu
+on-arrival: {!
+Q.budget -= 20;
+!}
+
+Removed 20 budget from the country's stockpile.
+
+@subtract100budget
+go-to: sandbox_menu
+on-arrival: {!
+Q.budget -= 100;
+!}
+
+Removed 100 budget from the country's stockpile. This doesn't go to the homeless or anything, why would you do this?
+
+@editeconomy
+
+- @increasegrowth: Increase Economic Growth by 5%
+- @decreasegrowth: Decrease Economic Growth by 5%
+- @increaseinflation: Increase Inflation by 5%
+- @decreaseinflation: Decrease Inflation by 5%
+- @increaseunemployment: Increase Unemployment by 5%
+- @decreaseunemployment: Decrease Unemployment by 5%
+- @returnsandbox: Return To Sandbox Menu
+
+@increasegrowth
+go-to: editeconomy
+on-arrival: {!
+Q.economic_growth += 5;
+!}
+
+Increased economic growth by 5%.
+
+@decreasegrowth
+go-to: editeconomy
+on-arrival: {!
+Q.economic_growth -= 5;
+!}
+
+Decreased economic growth by 5%.
+
+@increaseinflation
+go-to: editeconomy
+on-arrival: {!
+Q.inflation += 5;
+!}
+
+Increased inflation by 5%.
+
+@decreaseinflation
+go-to: editeconomy
+on-arrival: {!
+Q.inflation -= 5;
+!}
+
+Decreased inflation by 5%.
+
+@increaseunemployment
+go-to: editeconomy
+on-arrival: {!
+Q.unemployed += 5;
+!}
+
+Increased unemployment by 5%.
+
+@decreaseunemployment
+go-to: editeconomy
+on-arrival: {!
+Q.unemployed -= 5;
+!}
+
+Decreased unemployment by 5%.
+
+@editrelations
+
+- @increaseaprel: Increase Relations With AP
+- @decreaseaprel: Decrease Relations With AP
+- @increasecgprel: Increase Relations With CGP
+- @decreasecgprel: Decrease Relations With CGP
+- @increasetiprel: Increase Relations With TIP
+- @decreasetiprel: Decrease Relations With TIP
+- @increasedprel: Increase Relations With DP
+- @decreasedprel: Decrease Relations With DP
+- @removedissent: Remove Coalition Dissent
+- @maxdissent: Maximise Coalition Dissent
+- @returnsandbox: Return To Sandbox Menu
+
+@removedissent
+go-to: editrelations
+on-arrival: {!
+Q.coalition_dissent = 0;
+!}
+
+Removed coalition dissent.
+
+@maxdissent
+go-to: editrelations
+on-arrival: {!
+Q.coalition_dissent = 5;
+!}
+
+Removed coalition dissent.
+
+@increaseaprel
+go-to: editrelations
+on-arrival: {!
+Q.z_relation += 15;
+!}
+
+Increased relations with AP.
+
+@decreaseaprel
+go-to: editrelations
+on-arrival: {!
+Q.z_relation -= 15;
+!}
+
+Decreased relations with AP.
+
+@increasecgprel
+go-to: editrelations
+on-arrival: {!
+Q.CGP_relation += 15;
+!}
+
+Increased relations with CGP.
+
+@decreasecgprel
+go-to: editrelations
+on-arrival: {!
+Q.CGP_relation -= 15;
+!}
+
+Decreased relations with CGP.
+
+@increasetiprel
+go-to: editrelations
+on-arrival: {!
+Q.TIP_relation += 15;
+!}
+
+Increased relations with TIP.
+
+@decreasetiprel
+go-to: editrelations
+on-arrival: {!
+Q.TIP_relation -= 15;
+!}
+
+Decreased relations with TIP.
+
+@increasedprel
+go-to: editrelations
+on-arrival: {!
+Q.DP_relation += 15;
+!}
+
+Increased relations with the DP.
+
+@decreasedprel
+go-to: editrelations
+on-arrival: {!
+Q.DP_relation -= 15;
+!}
+
+Decreased relations with the DP.
+
+@increasemsprel
+go-to: editrelations
+on-arrival: {!
+Q.MSP_relation += 15;
+!}
+
+Increased relations with the MSP.
+
+@decreasemsprel
+go-to: editrelations
+on-arrival: {!
+Q.MSP_relation -= 15;
+!}
+
+Decreased relations with the MSP.
+
+@increasemhprel
+go-to: editrelations
+on-arrival: {!
+Q.mhp_relation += 15;
+!}
+
+Increased relations with the MHP.
+
+@decreasemhprel
+go-to: editrelations
+on-arrival: {!
+Q.mhp_relation -= 15;
+!}
+
+Decreased relations with the MHP.
+
+@editleft
+
+- @add5leftdissent: Add 5 Left Dissent
+- @100leftdissent: Maximum Left Dissent
+- @subtract5leftdissent: Remove 5 Left Dissent
+- @removeleftdissent: Remove All Left Dissent
+- @add5leftstrength: Add 5 Left Strength
+- @100leftstrength: Maximum Left Strength
+- @subtract5leftstrength: Remove 5 Left Strength
+- @removeleftstrength: Remove Left Strength
+- @returnsandbox: Return To Sandbox Menu
+
+@add5leftdissent
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_dissent += 5;
+!}
+
+Added 5 left dissent.
+
+@100leftdissent
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_dissent = 100;
+!}
+
+Maximised left dissent.
+
+@subtract5leftdissent
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_dissent -= 5;
+!}
+
+Reduced left dissent by 5.
+
+@removeleftdissent
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_dissent = 0;
+!}
+
+Removed all left dissent.
+
+@add5leftstrength
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_strength += 5;
+!}
+
+Added 5 left strength.
+
+@100leftstrength
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_strength = 100;
+!}
+
+Maximised left strength.
+
+@subtract5leftstrength
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_strength -= 5;
+!}
+
+Reduced left strength by 5.
+
+@removeleftstrength
+go-to: editleft
+on-arrival: {!
+Q.left_kemalists_strength = 0;
+!}
+
+Removed all left strength.
+
+@editorthodox
+
+- @add5orthodoxdissent: Add 5 Orthodox Dissent
+- @100orthodoxdissent: Maximum Orthodox Dissent
+- @subtract5orthodoxdissent: Remove 5 Orthodox Dissent
+- @removeorthodoxdissent: Remove All Orthodox Dissent
+- @add5orthodoxstrength: Add 5 Orthodox Strength
+- @100orthodoxstrength: Maximum Orthodox Strength
+- @subtract5orthodoxstrength: Remove 5 orthodox Strength
+- @removeorthodoxstrength: Remove Orthodox Strength
+- @returnsandbox: Return To Sandbox Menu
+
+@add5orthodoxdissent
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_dissent += 5;
+!}
+
+Added 5 orthodox dissent.
+
+@100orthodoxdissent
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_dissent = 100;
+!}
+
+Maximised orthodox dissent.
+
+@subtract5orthodoxdissent
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_dissent -= 5;
+!}
+
+Reduced orthodox dissent by 5.
+
+@removeorthodoxdissent
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_dissent = 0;
+!}
+
+Removed all orthodox dissent.
+
+@add5orthodoxstrength
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_strength += 5;
+!}
+
+Added 5 orthodox strength.
+
+@100orthodoxstrength
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_strength = 100;
+!}
+
+Maximised orthodox strength.
+
+@subtract5orthodoxstrength
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_strength -= 5;
+!}
+
+Reduced orthodox strength by 5.
+
+@removeorthodoxstrength
+go-to: editorthodox
+on-arrival: {!
+Q.orthodox_kemalists_strength = 0;
+!}
+
+Removed all orthodox strength.
+
+@editmarxist
+
+- @add5marxistdissent: Add 5 Marxist Dissent
+- @100marxistdissent: Maximum Marxist Dissent
+- @subtract5marxistdissent: Remove 5 Marxist Dissent
+- @removemarxistdissent: Remove All Marxist Dissent
+- @add5marxiststrength: Add 5 Marxist Strength
+- @100marxiststrength: Maximum Marxist Strength
+- @subtract5marxiststrength: Remove 5 Marxist Strength
+- @removemarxiststrength: Remove Marxist Strength
+- @returnsandbox: Return To Sandbox Menu
+
+@add5marxistdissent
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_dissent += 5;
+!}
+
+Added 5 marxist dissent.
+
+@100marxistdissent
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_dissent = 100;
+!}
+
+Maximised marxist dissent.
+
+@subtract5marxistdissent
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_dissent -= 5;
+!}
+
+Reduced marxist dissent by 5.
+
+@removemarxistdissent
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_dissent = 0;
+!}
+
+Removed all marxist dissent.
+
+@add5marxiststrength
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_strength += 5;
+!}
+
+Added 5 marxist strength.
+
+@100marxiststrength
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_strength = 100;
+!}
+
+Maximised marxist strength.
+
+@subtract5marxiststrength
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_strength -= 5;
+!}
+
+Reduced marxist strength by 5.
+
+@removemarxiststrength
+go-to: editmarxist
+on-arrival: {!
+Q.kemalist_marxists_strength = 0;
+!}
+
+Removed all marxist strength.
+
+@editright
+
+- @add5rightdissent: Add 5 Right Dissent
+- @100rightdissent: Maximum Right Dissent
+- @subtract5rightdissent: Remove 5 Right Dissent
+- @removerightdissent: Remove All Right Dissent
+- @add5rightstrength: Add 5 Right Strength
+- @100rightstrength: Maximum Right Strength
+- @subtract5rightstrength: Remove 5 Right Strength
+- @removerightstrength: Remove Right Strength
+- @returnsandbox: Return To Sandbox Menu
+
+@add5rightdissent
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_dissent += 5;
+!}
+
+Added 5 right dissent.
+
+@100rightdissent
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_dissent = 100;
+!}
+
+Maximised right dissent.
+
+@subtract5rightdissent
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_dissent -= 5;
+!}
+
+Reduced right dissent by 5.
+
+@removerightdissent
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_dissent = 0;
+!}
+
+Removed all right dissent.
+
+@add5rightstrength
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_strength += 5;
+!}
+
+Added 5 right strength.
+
+@100rightstrength
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_strength = 100;
+!}
+
+Maximised right strength.
+
+@subtract5rightstrength
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_strength -= 5;
+!}
+
+Reduced right strength by 5.
+
+@removerightstrength
+go-to: editright
+on-arrival: {!
+Q.right_kemalists_strength = 0;
+!}
+
+Removed all right strength.
+
+@editthirdworldist
+
+- @add5thirdworldistdissent: Add 5 Third Worldist Dissent
+- @100thirdworldistdissent: Maximum Third Worldist Dissent
+- @subtract5thirdworldistdissent: Remove 5 Third Worldist Dissent
+- @removethirdworldistdissent: Remove All Third Worldist Dissent
+- @add5thirdworldiststrength: Add 5 Third Worldist Strength
+- @100thirdworldiststrength: Maximum Third Worldist Strength
+- @subtract5thirdworldiststrength: Remove 5 Third Worldist Strength
+- @removethirdworldiststrength: Remove Third Worldist Strength
+- @returnsandbox: Return To Sandbox Menu
+
+@add5thirdworldistdissent
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_dissent += 5;
+!}
+
+Added 5 third worldist dissent.
+
+@100thirdworldistdissent
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_dissent = 100;
+!}
+
+Maximised third worldist dissent.
+
+@subtract5thirdworldistdissent
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_dissent -= 5;
+!}
+
+Reduced third worldist dissent by 5.
+
+@removethirdworldistdissent
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_dissent = 0;
+!}
+
+Removed all third worldist dissent.
+
+@add5thirdworldiststrength
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_strength += 5;
+!}
+
+Added 5 third worldist strength.
+
+@100thirdworldiststrength
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_strength = 100;
+!}
+
+Maximised third worldist strength.
+
+@subtract5thirdworldiststrength
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_strength -= 5;
+!}
+
+Reduced third worldist strength by 5.
+
+@removethirdworldiststrength
+go-to: editthirdworldist
+on-arrival: {!
+Q.third_worldists_strength = 0;
+!}
+
+Removed all third worldist strength.
+
+@returnsandbox
+go-to: sandbox_menu
+
+@editparamilitary
+
+- @raisethkpcstrength: Raise THKP-C Strength
+- @lowerthkpcstrength: Lower THKP-C Strength
+- @raisethkpcmilitancy: Raise THKP-C Militancy
+- @lowerthkpcmilitancy: Lower THKP-C Militancy
+- @banthkpc: Ban THKP-C
+- @unbanthkpc: Unban THKP-C
+- @raisetkpmlstrength: Raise TKP/ML Strength
+- @lowertkpmlstrength: Lower TKP/ML Strength
+- @raisetkpmlmilitancy: Raise TKP/ML Militancy
+- @lowertkpmlmilitancy: Lower TKP/ML Militancy
+- @bantkpml: Ban TKP/ML
+- @unbantkpml: Unban TKP/ML
+- @raisedevyolstrength: Raise DEV-YOL Strength
+- @lowerdevyolstrength: Lower DEV-YOL Strength
+- @raisedevyolmilitancy: Raise DEV-YOL Militancy
+- @lowerdevyolmilitancy: Lower DEV-YOL Militancy
+- @bandevyol: Ban DEV-YOL
+- @unbandevyol: Unban DEV-YOL
+- @raisegrey_wolvesstrength: Raise the Grey Wolves' Strength
+- @lowergrey_wolvesstrength: Lower the Grey Wolves' Strength
+- @raisegrey_wolvesmilitancy: Raise the Grey Wolves' Militancy
+- @lowergrey_wolvesmilitancy: Lower the Grey Wolves' Militancy
+- @bangrey_wolves: Ban the Grey Wolves
+- @unbangrey_wolves: Unban the Grey Wolves
+- @raiseraidersstrength: Raise the Raiders' Strength
+- @lowerraidersstrength: Lower the Raiders' Strength
+- @raiseraidersmilitancy: Raise the Raiders' Militancy
+- @lowerraidersmilitancy: Lower the Raiders' Militancy
+- @banraiders: Ban the Raiders
+- @unbanraiders: Unban the Raiders
+- @raisetitstrength: Raise TIT Strength
+- @lowertitstrength: Lower TIT Strength
+- @raisetitmilitancy: Raise TIT Militancy
+- @lowertitmilitancy: Lower TIT Militancy
+- @bantit: Ban TIT
+- @unbantit: Unban TIT
+- @returnsandbox: Return To Sandbox Menu
+
+@raisethkpcstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.thkpc_strength += 200;
+!}
+
+Raised THKP-C strength by 200.
+
+@lowerthkpcstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.thkpc_strength -= 200;
+!}
+
+Lowered THKP-C strength by 200.
+
+@raisethkpcmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.thkpc_militancy += 0.15;
+!}
+
+Raised THKP-C militancy.
+
+@lowerthkpcmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.thkpc_militancy -= 0.15;
+!}
+
+Lowered THKP-C militancy.
+
+@banthkpc
+go-to: editparamilitary
+view-if: thkpc_banned == 0
+on-arrival: {!
+Q.thkpc_banned = 1;
+!}
+
+Banned the THKP-C.
+
+@unbanthkpc
+go-to: editparamilitary
+view-if: thkpc_banned != 0
+on-arrival: {!
+Q.thkpc_banned = 0;
+!}
+
+Unbanned the THKP-C.
+
+@raisetkpmlstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.tkpml_strength += 200;
+!}
+
+Raised TKP/ML strength by 200.
+
+@lowertkpmlstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.tkpml_strength -= 200;
+!}
+
+Lowered TKP/ML strength by 200.
+
+@raisetkpmlmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.tkpml_militancy += 0.15;
+!}
+
+Raised TKP/ML militancy.
+
+@lowertkpmlmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.tkpml_militancy -= 0.15;
+!}
+
+Lowered TKP/ML militancy.
+
+@bantkpml
+go-to: editparamilitary
+view-if: tkpml_banned == 0
+on-arrival: {!
+Q.tkpml_banned = 1;
+!}
+
+Banned the TKP/ML.
+
+@unbantkpml
+go-to: editparamilitary
+view-if: tkpml_banned != 0
+on-arrival: {!
+Q.tkpml_banned = 0;
+!}
+
+Unbanned the TKP/ML.
+
+@raisedevyolstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.devyol_strength += 200;
+!}
+
+Raised DEV-YOL strength by 200.
+
+@lowerdevyolstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.devyol_strength -= 200;
+!}
+
+Lowered DEV-YOL strength by 200.
+
+@raisedevyolmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.devyol_militancy += 0.15;
+!}
+
+Raised DEV-YOL militancy.
+
+@lowerdevyolmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.devyol_militancy -= 0.15;
+!}
+
+Lowered DEV-YOL militancy.
+
+@bandevyol
+go-to: editparamilitary
+view-if: devyol_banned == 0
+on-arrival: {!
+Q.devyol_banned = 1;
+!}
+
+Banned the DEV-YOL.
+
+@unbandevyol
+go-to: editparamilitary
+view-if: devyol_banned != 0
+on-arrival: {!
+Q.devyol_banned = 0;
+!}
+
+Unbanned the DEV-YOL.
+
+@raisegrey_wolvesstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.grey_wolves_strength += 200;
+!}
+
+Raised the Grey Wolves' strength by 200.
+
+@lowergrey_wolvesstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.grey_wolves_strength -= 200;
+!}
+
+Lowered the Grey Wolves' strength by 200.
+
+@raisegrey_wolvesmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.grey_wolves_militancy += 0.15;
+!}
+
+Raised the Grey Wolves' militancy.
+
+@lowergrey_wolvesmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.grey_wolves_militancy -= 0.15;
+!}
+
+Lowered the Grey Wolves' militancy.
+
+@bangrey_wolves
+go-to: editparamilitary
+view-if: grey_wolves_banned == 0
+on-arrival: {!
+Q.grey_wolves_banned = 1;
+!}
+
+Banned the Grey Wolves.
+
+@unbangrey_wolves
+go-to: editparamilitary
+view-if: grey_wolves_banned != 0
+on-arrival: {!
+Q.grey_wolves_banned = 0;
+!}
+
+Unbanned the Grey Wolves.
+
+@raiseraidersstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.raiders_strength += 200;
+!}
+
+Raised the Raiders' strength by 200.
+
+@lowerraidersstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.raiders_strength -= 200;
+!}
+
+Lowered the Raiders' strength by 200.
+
+@raiseraidersmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.raiders_militancy += 0.15;
+!}
+
+Raised the Raiders' militancy.
+
+@lowerraidersmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.raiders_militancy -= 0.15;
+!}
+
+Lowered the Raiders' militancy.
+
+@banraiders
+go-to: editparamilitary
+view-if: raiders_banned == 0
+on-arrival: {!
+Q.raiders_banned = 1;
+!}
+
+Banned the Raiders.
+
+@unbanraiders
+go-to: editparamilitary
+view-if: raiders_banned != 0
+on-arrival: {!
+Q.raiders_banned = 0;
+!}
+
+Unbanned the Raiders
+
+@raisetitstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.tit_strength += 200;
+!}
+
+Raised TIT strength by 200.
+
+@lowertitstrength
+go-to: editparamilitary
+on-arrival: {!
+Q.tit_strength -= 200;
+!}
+
+Lowered TIT strength by 200.
+
+@raisetitmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.tit_militancy += 0.15;
+!}
+
+Raised TIT militancy.
+
+@lowertitmilitancy
+go-to: editparamilitary
+on-arrival: {!
+Q.tit_militancy -= 0.15;
+!}
+
+Lowered TIT militancy.
+
+@bantit
+go-to: editparamilitary
+view-if: tit_banned == 0
+on-arrival: {!
+Q.tit_banned = 1;
+!}
+
+Banned TIT.
+
+@unbantit
+go-to: editparamilitary
+view-if: tit_banned != 0
+on-arrival: {!
+Q.tit_banned = 0;
+!}
+
+Unbanned TIT
+
+@editarmy
+
+- @raiselandarmystrength: Raise land army strength by a point
+- @lowerlandarmystrength: Lower land army strength by a point
+- @raisenavystrength: Raise navy strength by a point
+- @lowernavystrength: Lower navy strength by a point
+- @raiseairforcestrength: Raise air force strength by a point
+- @lowerairforcestrength: Lower air force strength by a point
+- @returnsandbox: Return To Sandbox Menu
+
+@raiselandarmystrength
+go-to: editarmy
+on-arrival: {!
+Q.army_land_strength += 0.1;
+!}
+
+Raised land army strength by a point.
+
+@lowerlandarmystrength
+go-to: editarmy
+on-arrival: {!
+Q.army_land_strength -= 0.1;
+!}
+
+Lowered land army strength by a point.
+
+@raisenavystrength
+go-to: editarmy
+on-arrival: {!
+Q.army_naval_strength += 0.1;
+!}
+
+Raised navy strength by a point.
+
+@lowernavystrength
+go-to: editarmy
+on-arrival: {!
+Q.army_naval_strength -= 0.1;
+!}
+
+Lowered navy strength by a point.
+
+@raiseairforcestrength
+go-to: editarmy
+on-arrival: {!
+Q.army_aerial_strength += 0.1;
+!}
+
+Raised Air Force strength by a point.
+
+@lowerairforcestrength
+go-to: editarmy
+on-arrival: {!
+Q.army_aerial_strength -= 0.1;
+!}
+
+Lowered Air Force strength by a point.
