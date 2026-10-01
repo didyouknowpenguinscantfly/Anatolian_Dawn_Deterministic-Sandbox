@@ -307,26 +307,26 @@ Increased relations with the MSP.
 @decreasemsprel
 go-to: editrelations
 on-arrival: {!
-Q.msp_relation -= 15;
+Q.MSP_relation -= 15;
 !}
 
 Decreased relations with the MSP.
 
-@increasensdaprel
+@increasemhprel
 go-to: editrelations
 on-arrival: {!
-Q.nsdap_relation += 15;
+Q.mhp_relation += 15;
 !}
 
-Increased relations with the NSDAP.
+Increased relations with the MHP.
 
-@decreasensdaprel
+@decreasemhprel
 go-to: editrelations
 on-arrival: {!
-Q.nsdap_relation -= 15;
+Q.mhp_relation -= 15;
 !}
 
-Decreased relations with the NSDAP.
+Decreased relations with the MHP.
 
 @editleft
 
@@ -343,7 +343,7 @@ Decreased relations with the NSDAP.
 @add5leftdissent
 go-to: editleft
 on-arrival: {!
-Q.left_dissent += 5;
+Q.left_kemalists_dissent += 5;
 !}
 
 Added 5 left dissent.
@@ -351,7 +351,7 @@ Added 5 left dissent.
 @100leftdissent
 go-to: editleft
 on-arrival: {!
-Q.left_dissent = 100;
+Q.left_kemalists_dissent = 100;
 !}
 
 Maximised left dissent.
@@ -359,7 +359,7 @@ Maximised left dissent.
 @subtract5leftdissent
 go-to: editleft
 on-arrival: {!
-Q.left_dissent -= 5;
+Q.left_kemalists_dissent -= 5;
 !}
 
 Reduced left dissent by 5.
@@ -367,7 +367,7 @@ Reduced left dissent by 5.
 @removeleftdissent
 go-to: editleft
 on-arrival: {!
-Q.left_dissent = 0;
+Q.left_kemalists_dissent = 0;
 !}
 
 Removed all left dissent.
@@ -375,7 +375,7 @@ Removed all left dissent.
 @add5leftstrength
 go-to: editleft
 on-arrival: {!
-Q.left_strength += 5;
+Q.left_kemalists_strength += 5;
 !}
 
 Added 5 left strength.
@@ -383,7 +383,7 @@ Added 5 left strength.
 @100leftstrength
 go-to: editleft
 on-arrival: {!
-Q.left_strength = 100;
+Q.left_kemalists_strength = 100;
 !}
 
 Maximised left strength.
@@ -391,7 +391,7 @@ Maximised left strength.
 @subtract5leftstrength
 go-to: editleft
 on-arrival: {!
-Q.left_strength -= 5;
+Q.left_kemalists_strength -= 5;
 !}
 
 Reduced left strength by 5.
@@ -399,7 +399,7 @@ Reduced left strength by 5.
 @removeleftstrength
 go-to: editleft
 on-arrival: {!
-Q.left_strength = 0;
+Q.left_kemalists_strength = 0;
 !}
 
 Removed all left strength.
