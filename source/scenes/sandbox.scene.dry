@@ -284,7 +284,7 @@ on-arrival: {!
 Q.mhp_relation += 15;
 !}
 
-Increased relations with MHP.
+The option doesn't work.
 
 @decreasemhprel
 go-to: editrelations
@@ -292,7 +292,7 @@ on-arrival: {!
 Q.mhp_relation -= 15;
 !}
 
-Decreased relations with MHP.
+The option doesn't work.
 
 @editleft
 
