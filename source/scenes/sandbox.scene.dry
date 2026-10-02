@@ -39,7 +39,7 @@ Q.advisor_action_timer = 0;
 
 Made advisor actions available.
 
-@editfactions
+@editfactions_dissent
 
 - @editleft: Edit Leftist Kemalists' dissent
 - @editorthodox: Edit Reformist Kemalists' dissent
