@@ -920,6 +920,7 @@ Lowered Air Force strength by a point.
 - @decreasepoliticalconsciousness: Decrease political consciousness
 - @increaseradicalism: Increase radicalism
 - @decreaseradicalism: Decrease radicalism
+- @returnsandbox: Return To Sandbox Menu
 
 @increasepoliticalconsciousness
 go-to: editkurdish_nationalism
