@@ -548,12 +548,12 @@ go-to: sandbox_menu
 - @lowerraidersmilitancy: Lower the Raiders' Militancy
 - @banraiders: Ban the Raiders
 - @unbanraiders: Unban the Raiders
-- @raisetitstrength: Raise TIT Strength
-- @lowertitstrength: Lower TIT Strength
-- @raisetitmilitancy: Raise TIT Militancy
-- @lowertitmilitancy: Lower TIT Militancy
-- @bantit: Ban TIT
-- @unbantit: Unban TIT
+- @raisetitstrength: Raise TİT Strength
+- @lowertitstrength: Lower TİT Strength
+- @raisetitmilitancy: Raise TİT Militancy
+- @lowertitmilitancy: Lower TİT Militancy
+- @bantit: Ban TİT
+- @unbantit: Unban TİT
 - @returnsandbox: Return To Sandbox Menu
 
 @raisethkpcstrength
@@ -812,7 +812,7 @@ on-arrival: {!
 Q.tit_strength += 200;
 !}
 
-Raised TIT strength by 200.
+Raised TİT strength by 200.
 
 @lowertitstrength
 go-to: editparamilitary
@@ -820,7 +820,7 @@ on-arrival: {!
 Q.tit_strength -= 200;
 !}
 
-Lowered TIT strength by 200.
+Lowered TİT strength by 200.
 
 @raisetitmilitancy
 go-to: editparamilitary
@@ -828,7 +828,7 @@ on-arrival: {!
 Q.tit_militancy += 0.15;
 !}
 
-Raised TIT militancy.
+Raised TİT militancy.
 
 @lowertitmilitancy
 go-to: editparamilitary
@@ -836,7 +836,7 @@ on-arrival: {!
 Q.tit_militancy -= 0.15;
 !}
 
-Lowered TIT militancy.
+Lowered TİT militancy.
 
 @bantit
 go-to: editparamilitary
@@ -845,7 +845,7 @@ on-arrival: {!
 Q.tit_banned = 1;
 !}
 
-Banned TIT.
+Banned TİT.
 
 @unbantit
 go-to: editparamilitary
@@ -854,7 +854,7 @@ on-arrival: {!
 Q.tit_banned = 0;
 !}
 
-Unbanned TIT
+Unbanned TİT.
 
 @editarmy
 
