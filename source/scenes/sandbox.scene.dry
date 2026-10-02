@@ -174,6 +174,10 @@ Removed 100 budget from the country's stockpile. This doesn't go to the homeless
 - @decreasetiprel: Decrease Relations With TIP
 - @increasedprel: Increase Relations With DP
 - @decreasedprel: Decrease Relations With DP
+- @increasemsprel: Increase Relations With MSP
+- @decreasemsprel: Decrease Relations With MSP
+- @increasemhprel: Increase Relations With MHP
+- @decreasemhprel: Decrease Relations With MHP
 - @removedissent: Remove Coalition Dissent
 - @maxdissent: Maximise Coalition Dissent
 - @returnsandbox: Return To Sandbox Menu
@@ -248,7 +252,7 @@ on-arrival: {!
 Q.DP_relation += 15;
 !}
 
-Increased relations with the DP.
+Increased relations with DP.
 
 @decreasedprel
 go-to: editrelations
@@ -256,7 +260,7 @@ on-arrival: {!
 Q.DP_relation -= 15;
 !}
 
-Decreased relations with the DP.
+Decreased relations with DP.
 
 @increasemsprel
 go-to: editrelations
@@ -264,7 +268,7 @@ on-arrival: {!
 Q.MSP_relation += 15;
 !}
 
-Increased relations with the MSP.
+Increased relations with MSP.
 
 @decreasemsprel
 go-to: editrelations
@@ -272,7 +276,7 @@ on-arrival: {!
 Q.MSP_relation -= 15;
 !}
 
-Decreased relations with the MSP.
+Decreased relations with MSP.
 
 @increasemhprel
 go-to: editrelations
@@ -280,7 +284,7 @@ on-arrival: {!
 Q.mhp_relation += 15;
 !}
 
-Increased relations with the MHP.
+Increased relations with MHP.
 
 @decreasemhprel
 go-to: editrelations
@@ -288,7 +292,7 @@ on-arrival: {!
 Q.mhp_relation -= 15;
 !}
 
-Decreased relations with the MHP.
+Decreased relations with MHP.
 
 @editleft
 
