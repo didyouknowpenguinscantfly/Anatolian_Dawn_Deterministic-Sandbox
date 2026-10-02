@@ -16,6 +16,7 @@ go-to: sandbox_menu
 - @editfactions_dissent: Edit CHP Factions' Dissent
 - @editparamilitary: Edit Paramilitary Groups
 - @editarmy: Edit Army
+- @editkurdish_nationalism: Edit Kurdish Nationalism
 - @backSpecialScene: Exit Sandbox Menu
 
 @clear_hand
@@ -176,10 +177,12 @@ Removed 100 budget from the country's stockpile. This doesn't go to the homeless
 - @decreasedprel: Decrease Relations With DP
 - @increasemsprel: Increase Relations With MSP
 - @decreasemsprel: Decrease Relations With MSP
-- @increasemhprel: Increase Relations With MHP (broken)
-- @decreasemhprel: Decrease Relations With MHP (broken)
+- @increasemhprel: Increase Relations With MHP
+- @decreasemhprel: Decrease Relations With MHP
 - @removedissent: Remove Coalition Dissent
 - @maxdissent: Maximise Coalition Dissent
+- @increasediskrel: Increase Relations with DİSK
+- @decreasediskrel: Decrease Relations with DİSK
 - @returnsandbox: Return To Sandbox Menu
 
 @removedissent
@@ -281,18 +284,34 @@ Decreased relations with MSP.
 @increasemhprel
 go-to: editrelations
 on-arrival: {!
-Q.mhp_relation += 15;
+Q.MHP_relation += 15;
 !}
 
-Your MHP relations DEFINITELY increased.
+Increased relations with MHP.
 
 @decreasemhprel
 go-to: editrelations
 on-arrival: {!
-Q.mhp_relation -= 15;
+Q.MHP_relation -= 15;
 !}
 
-Your MHP relations DEFINITELY decreased.
+Decreased relations with MHP.
+
+@increasediskrel
+go-to: editrelations
+on-arrival: {!
+Q.disk_relation += 15;
+!}
+
+Increased relations with DİSK.
+
+@decreasediskrel
+go-to: editrelations
+on-arrival: {!
+Q.disk_relation -= 15;
+!}
+
+Decreased relations with DİSK.
 
 @editleft
 
@@ -894,3 +913,42 @@ Q.army_aerial_strength -= 0.1;
 !}
 
 Lowered Air Force strength by a point.
+
+@editkurdish_nationalism
+
+- @increasepoliticalconsciousness: Increase political consciousness
+- @decreasepoliticalconsciousness: Decrease political consciousness
+- @increaseradicalism: Increase radicalism
+- @decreaseradicalism: Decrease radicalism
+
+@increasepoliticalconsciousness
+go-to: editkurdish_nationalism
+on-arrival: {!
+Q.kurdish_political_consciousness += 0.20;
+!}
+
+Increased political consciousness.
+
+@decreasepoliticalconsciousness
+go-to: editkurdish_nationalism
+on-arrival: {!
+Q.kurdish_political_consciousness -= 0.20;
+!}
+
+Decreased political consciousness.
+
+@increaseradicalism
+go-to: editkurdish_nationalism
+on-arrival: {!
+Q.kurdish_radicalism += 0.25;
+!}
+
+Increased radicalism.
+
+@decreaseradicalism
+go-to: editkurdish_nationalism
+on-arrival: {!
+Q.kurdish_radicalism -= 0.25;
+!}
+
+Decreased radicalism.
